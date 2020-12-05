@@ -1,3 +1,5 @@
+Previously this repo was contained in this branch: https://github.com/MonJamp/ProShift/tree/server
+
 This is where we will commit code for the backend/server
 
 The server is where we will store all relevant information for our application which includes but is not limited to: user information, all shift related information, manager information, company information, etc. We are actually using Django to manage our server and it provides us with a handy admin panel so we can check to see if all the data is actually saved on there correctly. From the Django Admin panel we can create new users, check recent shift changes and, much more that we may have to work with for the server.  
