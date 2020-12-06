@@ -503,7 +503,7 @@ def GetPositionsFromCompany(request, *args, **kwargs):
 
 @swagger_auto_schema(method='post', request_body=id_body, responses={200: ShiftSerializer})
 @api_view(['POST'])
-@permission_classes([IsAuthenticated, IsManager])
+@permission_classes([IsAuthenticated])
 def GetShift(request, *args, **kwargs):
     """
     Return details for specific shift by id
