@@ -516,6 +516,5 @@ def GetShift(request, *args, **kwargs):
     except Shift.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     
-    serializer = ShiftSerializer(shift, data=request.data)
-    serializer.is_valid(raise_exception=True)
+    serializer = ShiftSerializer(shift)
     return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
