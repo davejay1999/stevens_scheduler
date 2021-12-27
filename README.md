@@ -1,3 +1,5 @@
+Link to front-end application source code: https://github.com/MonJamp/ProShift
+
 Previously this repo was contained in this branch: https://github.com/MonJamp/ProShift/tree/server
 
 This is where we will commit code for the backend/server
