@@ -1,1 +1,1 @@
-web: python manage.py migrate --fake-initial && gunicorn proshift.wsgi
+web: python manage.py makemigrations &&  python manage.py migrate&& gunicorn proshift.wsgi
