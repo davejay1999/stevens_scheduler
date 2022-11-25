@@ -46,6 +46,11 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 
 
 
+import django
+from django.utils.encoding import force_str
+django.utils.encoding.force_text = force_str
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
