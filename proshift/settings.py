@@ -59,7 +59,7 @@ django.utils.encoding.force_text = force_str
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
-ALLOWED_HOSTS = ['https://web-production-4d7c.up.railway.app/', '127.0.0.1']
+ALLOWED_HOSTS = ['https://web-production-4d7c.up.railway.app/', '0.0.0.0:$PORT']
 CSRF_TRUSTED_ORIGINS = ['https://web-production-3640.up.railway.app']
 
 # Application definition
