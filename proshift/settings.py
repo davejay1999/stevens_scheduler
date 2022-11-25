@@ -54,7 +54,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
-ALLOWED_HOSTS = ['proshiftonline.com', '127.0.0.1']
+ALLOWED_HOSTS = ['https://web-production-4d7c.up.railway.app/', '127.0.0.1']
 
 
 # Application definition
