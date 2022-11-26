@@ -59,7 +59,8 @@ django.utils.encoding.force_text = force_str
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
-ALLOWED_HOSTS = ['https://web-production-4d7c.up.railway.app/', '0.0.0.0:$PORT']
+ALLOWED_HOSTS = ['https://web-production-4d7c.up.railway.app/', '127.0.0.1']
+
 CSRF_TRUSTED_ORIGINS = ['https://web-production-3640.up.railway.app']
 
 # Application definition
@@ -71,6 +72,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 
     'dashboard',
 
@@ -219,3 +221,9 @@ STATIC_URL = '/static/'
 # Simplified static file serving.
 # https://pypi.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
