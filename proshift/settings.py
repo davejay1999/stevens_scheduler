@@ -25,8 +25,7 @@ SECRET_KEY = 'l_gg(w^w#3_xa7w+uh7ytx823q=wo$og-(nl#+td)5-=5-d+0e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['proshiftonline.com', '127.0.0.1']
-
+ALLOWED_HOST = ['*']
 
 # Application definition
 
@@ -37,13 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'dashboard',
-
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
     'smart_selects',
+    'dashboard',
+    'api',
+
+
 ]
 
 MIDDLEWARE = [
@@ -145,9 +145,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    Path.joinpath(BASE_DIR, 'static')
-]
-
-STATIC_ROOT = Path.joinpath(BASE_DIR, 'assets')
+import os 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
