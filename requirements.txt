@@ -1,10 +1,10 @@
 asgiref==3.2.10
 astroid==2.4.2
 colorama
-Django==3.1.2
+Django
 django-templated-mail==1.1.1
 django-smart-selects
-djangorestframework==3.11.2
+djangorestframework
 djoser==2.0.5
 isort==5.6.4
 lazy-object-proxy==1.4.3
@@ -33,7 +33,7 @@ coreschema==0.0.4
 cryptography==38.0.3
 cycler==0.11.0
 defusedxml==0.7.1
-dj-database-url==1.0.0
+dj-database-url
 django-crispy-forms==1.14.0
 django-environ==0.9.0
 django-extensions==3.2.1
