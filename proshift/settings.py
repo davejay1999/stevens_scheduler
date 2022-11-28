@@ -25,7 +25,7 @@ SECRET_KEY = 'l_gg(w^w#3_xa7w+uh7ytx823q=wo$og-(nl#+td)5-=5-d+0e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOST = ['*','https://web-production-697e.up.railway.app/']
+ALLOWED_HOST = ['web-production-697e.up.railway.app','*','https://web-production-697e.up.railway.app/']
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000/','https://web-production-697e.up.railway.app/']
 # Application definition
 
