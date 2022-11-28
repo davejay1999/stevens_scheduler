@@ -1,1 +1,1 @@
-web: gunicorn proshift.wsgi
+web: gunicorn proshift.wsgi && python manage.py runserver
