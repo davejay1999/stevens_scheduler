@@ -1,6 +1,6 @@
 asgiref==3.2.10
 astroid==2.4.2
-colorama==0.4.4
+colorama
 Django==3.1.2
 django-templated-mail==1.1.1
 django-smart-selects
