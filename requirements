@@ -25,8 +25,8 @@ django-extensions==3.2.1
 django-heroku==0.3.1
 django-smart-selects==1.6.0
 django-templated-mail==1.1.1
-djangorestframework==3.14.0
-djangorestframework-simplejwt==4.8.0
+djangorestframework<3.12.0
+djangorestframework-simplejwt<3.12.0
 djoser==2.1.0
 docker==4.4.4
 docker-compose==1.25.5
