@@ -1,7 +1,7 @@
 asgiref
 astroid==2.4.2
 colorama
-Django
+Django<3.0
 django-templated-mail==1.1.1
 django-smart-selects
 djangorestframework<3.12.0
