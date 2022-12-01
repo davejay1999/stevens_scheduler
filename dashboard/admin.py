@@ -1,3 +1,18 @@
+# Copyright 2020 ProShift Team
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 from django.contrib import admin
 
 from .models import *
@@ -22,9 +37,6 @@ class UserAdmin(admin.ModelAdmin):
             return list()
         return super(UserAdmin, self).get_inline_instances(request, obj)
 
-class AvailabilityAdmin(admin.ModelAdmin):
-    list_display = ('employee' , 'company' , 'start_date', 'is_approved', 'is_current', 'id')
-
 class PositionAdmin(admin.ModelAdmin):
     list_display = ('name', 'company', 'is_manager', 'id')
 
@@ -43,11 +55,13 @@ class RequestedTimeOffAdmin(admin.ModelAdmin):
 class ShiftAdmin(admin.ModelAdmin):
     list_display = ('employee', 'company', 'is_open', 'is_dropped', 'date', 'time_start', 'time_end', 'id')
 
+class CompanyCodeAdmin(admin.ModelAdmin):
+    list_display = ('code', 'company', 'position', 'email')
+
 admin.site.register(User, UserAdmin)
 admin.site.register(Shift, ShiftAdmin)
 admin.site.register(Company, CompanyAdmin)
 admin.site.register(Position, PositionAdmin)
 admin.site.register(RequestedTimeOff, RequestedTimeOffAdmin)
-# admin.site.register(Availability, AvailabilityAdmin)
 admin.site.register(ShiftRequest, ShiftRequestAdmin)
-admin.site.register(EmployeeRole, EmployeeRoleAdmin)
+admin.site.register(CompanyCode, CompanyCodeAdmin)

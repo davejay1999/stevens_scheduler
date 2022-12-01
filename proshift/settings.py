@@ -1,3 +1,18 @@
+# Copyright 2020 ProShift Team
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 """
 Django settings for proshift project.
 
@@ -25,9 +40,9 @@ SECRET_KEY = 'l_gg(w^w#3_xa7w+uh7ytx823q=wo$og-(nl#+td)5-=5-d+0e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOST = ['web-production-697e.up.railway.app','*','https://web-production-697e.up.railway.app/']
-ALLOWED_HOSTS = ['web-production-697e.up.railway.app','*','https://web-production-697e.up.railway.app/']
-CSRF_TRUSTED_ORIGINS = ['web-production-697e.up.railway.app','*','https://web-production-697e.up.railway.app/']
+ALLOWED_HOSTS = ['proshiftonline.com', '127.0.0.1']
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,21 +52,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'dashboard',
+
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
     'smart_selects',
-    'dashboard',
-    'api',
-
-
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -81,6 +96,7 @@ WSGI_APPLICATION = 'proshift.wsgi.application'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication'
     ),
     'DEFAULT_PERMISSIONS_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
@@ -90,6 +106,7 @@ REST_FRAMEWORK = {
 # Custom user model
 AUTH_USER_MODEL = "dashboard.User"
 
+# Djoser
 DJOSER = {
     'LOGIN_FIELD': 'email',
     'USER_CREATE_PASSWORD_RETYPE': True,
@@ -99,20 +116,28 @@ DJOSER = {
     },
 }
 
+# Swagger
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    },
+
+    'USE_SESSION_AUTH': False,
+}
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'yfkH6Jp6xahW1hkgd0fu',
-        'HOST': 'containers-us-west-103.railway.app',
-        'PORT': '8038',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -151,6 +176,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-import os 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    Path.joinpath(BASE_DIR, 'static')
+]
+
+STATIC_ROOT = Path.joinpath(BASE_DIR, 'assets')
