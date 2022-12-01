@@ -15,7 +15,6 @@ itypes==1.2.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 packaging==20.4
-pkg-resources
 pyparsing==2.4.7
 pytz==2020.1
 requests==2.25.0
