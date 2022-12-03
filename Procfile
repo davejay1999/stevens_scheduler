@@ -1,1 +1,1 @@
-python manage.py makemigrations api && python manage.py migrate && python manage.py makemigrations dashboard && python manage.py migrate && python manage.py makemigrations  && python manage.py migrate &&  web: gunicorn proshift.wsgi && python manage.py runserver
+python manage.py makemigrations api && python manage.py migrate && python manage.py makemigrations dashboard && python manage.py migrate && python manage.py makemigrations  && python manage.py migrate &&  web: gunicorn proshift.wsgi && python manage.py collectstatic && python manage.py runserver
