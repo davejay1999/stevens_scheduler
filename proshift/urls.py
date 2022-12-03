@@ -39,3 +39,4 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('chaining/', include('smart_selects.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
