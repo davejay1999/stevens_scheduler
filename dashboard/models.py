@@ -38,8 +38,6 @@ class User(AbstractUser):
 class Company(models.Model):
     name = models.CharField(max_length=32)
 
-    REQUIRED_FIELDS = ['name']
-
     def __str__(self):
         return self.name
     
